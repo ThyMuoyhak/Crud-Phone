@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Product Management</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+  <div class="container-fluid text-center">
+    <h1>Premium Product Management</h1>
+    <button type="button" class="btn btn-custom d-block ms-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Add Product
+    </button>
+  </div>
+
+  <!-- Search box -->
+  <div class="container mt-4 search-box">
+    <input type="text" id="searchInput" class="form-control" placeholder="Search by product name" onkeyup="searchProduct()">
+  </div>
+
+  <div class="container mt-4">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Thumbnail</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="root">
+        <!-- Product Rows will be added dynamically -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Modal for adding/editing products -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add / Edit Product</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="productForm">
+            <div class="mb-3">
+              <label for="id" class="form-label">ID</label>
+              <input type="text" class="form-control" id="id" placeholder="Enter product ID">
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter product name">
+            </div>
+            <div class="mb-3">
+              <label for="price" class="form-label">Price</label>
+              <input type="text" class="form-control" id="price" placeholder="Enter product price">
+            </div>
+            <div class="mb-3">
+              <label for="qty" class="form-label">Quantity</label>
+              <input type="number" class="form-control" id="qty" placeholder="Enter product quantity">
+            </div>
+            <div class="mb-3">
+              <label for="thumbnail" class="form-label">Thumbnail</label>
+              <input type="file" class="form-control" id="thumbnail">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+              <button id="btn-submit" type="button" class="btn btn-custom">Save Product</button>
+              <button id="btn-update" type="button" class="btn btn-warning" style="display:none;">Update Product</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and custom script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js">
+    
+  </script>
+</body>
+</html>
